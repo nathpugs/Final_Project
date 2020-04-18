@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    >
+    <Button
+        android:id="@+id/new_scale_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="新协议称同步历史数据" />
+
+    <TextView
+        android:id="@+id/device_connect_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_margin="8dp"
+        android:background="#aaffff00"
+        android:text="ConnectStatus:"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/text_mac"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="mac：" />
+    <TextView
+        android:id="@+id/text_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Scale user ID：" />
+
+    <TextView
+        android:id="@+id/weight_weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="体重：" />
+
+    <TextView
+        android:id="@+id/weight_bmi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="BMI：" />
+
+    <TextView
+        android:id="@+id/weight_bofy_fat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="体脂：" />
+
+    <TextView
+        android:id="@+id/weight_bone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="骨头：" />
+
+    <TextView
+        android:id="@+id/weight_visceral_fat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="内脏脂肪：" />
+
+    <TextView
+        android:id="@+id/weight_basal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="基础代谢：" />
+
+    <TextView
+        android:id="@+id/weight_mass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="肌肉质量：" />
+
+    <TextView
+        android:id="@+id/weight_water"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="水分：" />
+
+
+</LinearLayout>

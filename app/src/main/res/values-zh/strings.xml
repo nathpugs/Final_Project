@@ -1,0 +1,103 @@
+<resources>
+    <string name="app_name">FitBleKit</string>
+
+    <!--权限-->
+    <string name="permission_request_title">FitBleKit需要获取您设备的某些权限</string>
+    <string name="permission_request_goto_settings">去设置</string>
+    <string name="permission_request_failed">获取权限失败</string>
+    <string name="permission_rationale_storage">获取设备存储权限以存取缓存数据</string>
+    <string name="permission_rationale_camera">获取拍照权限以设置用户头像扫描设备二维码等</string>
+    <string name="permission_rationale_ble_location">获取设备蓝牙(含位置)权限以使用设备蓝牙功能</string>
+    <string name="permission_rationale_phone_wifi_state">获取设备信息权限以收集本APP的错误信息</string>
+    <string name="permission_rationale_record_audio">获取设备录音权限以收集本APP的错误信息</string>
+    <string name="permission_rationale_get_tasks">获取设备最近任务权限以收集本APP的错误信息</string>
+    <string name="permission_deny_result_remind">否则，您将无法正常使用FitBleKit。</string>
+    <string name="permission_request_in_settings_page_path">设置路径：设置->应用->FitBleKit->权限</string>
+
+    <string name="common_confirm">确认</string>
+    <string name="common_cancel">取消</string>
+    <string name="return_txt">返回</string>
+    <array name="device_type">
+        <item>手环</item>
+        <item>秤</item>
+        <item>心率带</item>
+        <item>踏频</item>
+        <item>跳绳</item>
+        <item>臂带</item>
+        <item>壶铃</item>
+        <item>码表</item>
+        <item>HUB配置</item>
+        <item>拳击</item>
+    </array>
+
+    <!--设备类型 start-->
+    <string name="old_protocol_scale">旧协议脂肪秤</string>
+    <string name="new_protocol_scale">新协议脂肪秤</string>
+    <string name="old_protocol_traker">旧协议手环</string>
+    <string name="new_protocol_traker">新协议手环</string>
+    <string name="heart_rate_monitor">心率带</string>
+    <string name="cadence">踏频</string>
+    <string name="jump">跳绳</string>
+    <string name="armband">臂带</string>
+    <string name="kettle_bell">壶铃</string>
+    <string name="bike_computer">码表</string>
+    <string name="hub">Hub</string>
+    <string name="boxing">拳击</string>
+    <string name="broadcasting">蓝牙广播秤</string>
+    <!--设备类型 end-->
+
+    <string name="scan_dev">搜索设备</string>
+    <string name="my_device">我的设备</string>
+    <string name="stpes_walk">设备已连接</string>
+    <string name="device_connecting">设备连接中</string>
+    <string name="un_stpes_walk">设备未连接</string>
+    <string name="old_protocol_tracker_has_no_need_to_set_param">旧协议手环无需设置参数</string>
+    <string name="current_real_time_data">当前实时数据</string>
+    <string name="real_time_heart_rate">实时心率</string>
+
+    <string name="weight_index">体重指数</string>
+    <string name="weight_body_fat">体脂</string>
+    <string name="weight_bone">骨头</string>
+    <string name="weight_visceral_fat">内脏脂肪</string>
+    <string name="weight_metabolism">基础代谢</string>
+    <string name="weight_muscle">肌肉质量</string>
+    <string name="weight_water">水份</string>
+
+    <string name="Weight">体重</string>
+    <string name="connected">已连接</string>
+    <string name="unconnected">未连接</string>
+    <string name="connect">连接</string>
+    <string name="connecting">连接中</string>
+    <string name="disconnect">断开连接</string>
+    <string name="disconnecting">断开连接中</string>
+    <string name="disconnected">已断开连接</string>
+    <string name="unbind">解绑</string>
+    <string name="history_device">历史设备</string>
+    <string name="history_data">历史数据</string>
+    <string name="device_not_connected_can_not_operate">设备未连接，不可操作！</string>
+    <string name="input_pair_code_reminder">请输入配对码</string>
+    <string name="synch_history">同步历史数据</string>
+    <string name="get_fit_file_name_list">获取fit文件名列表</string>
+    <string name="pairing_password_incorrect_reminder">配对密码错误！</string>
+    <string name="pairing_password_format_invalid">配对密码，须为6位数字！</string>
+    <string name="device_is_not_ready">设备未就绪！</string>
+    <string name="battery_level">电池电量</string>
+    <string name="get_battery_level">获取电池电量</string>
+    <string name="synchronize_history_data">同步历史数据</string>
+    <string name="heart_rate">心率</string>
+    <string name="setting">设置</string>
+    <string name="send_call_reminder">发送来电提醒</string>
+    <string name="set_sleep_time">设置睡眠时间</string>
+    <string name="set_utc">设置 UTC</string>
+    <string name="set_user_info">设置用户信息</string>
+    <string name="set_alarm">设置闹钟</string>
+    <string name="set_sedentary_reminder">设置久坐提醒</string>
+    <string name="set_drinking_water_reminder">设置喝水提醒</string>
+    <string name="set_alarm_switch">设置闹钟开关</string>
+    <string name="set_the_health_reminder_switch">设置健康提醒开关</string>
+    <string name="switch_real_time_data_switch">关闭实时数据开关</string>
+    <string name="message_reminder_switch">消息提醒开关</string>
+    <string name="entry_heart_rate_mode">设置进入心率模式</string>
+    <string name="entry_photo_mode">设置进入拍照模式</string>
+    <string name="pair">配对</string>
+</resources>

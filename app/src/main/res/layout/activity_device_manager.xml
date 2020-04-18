@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".devicemanager.DeviceManagerActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Click + Add Device in the menu \ nClick the list item below to connect the device \ nLong press the list item to delete the device"
+            android:textColor="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/control_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Click to enter the device control interface" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/dev_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

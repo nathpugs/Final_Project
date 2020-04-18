@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorbg"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/scan_device"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="@string/scan_dev"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/device_connect_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="@string/unconnected"
+            android:textSize="16sp" />
+
+        <ListView
+            android:id="@+id/showBlueTooth"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#666666"
+            android:dividerHeight="1dp"
+            android:scrollbars="none"></ListView>
+
+    </LinearLayout>
+
+
+</LinearLayout>
