@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.onecoder.device.R;
 import com.onecoder.device.adpater.FraPagerAdapter;
@@ -45,6 +46,13 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
     private static final String TAG = BoxingMainActivity.class.getSimpleName();
     @BindView(R.id.view_pager)
     ViewPager viewPager;
+
+    @BindView(R.id.nathTestId10)
+    TextView nathTestId10;
+
+    @BindView(R.id.nathTestId11)
+    TextView nathTestId11;
+
     private FraPagerAdapter fraPagerAdapter;
     private List<BoxingFragment> fragmentList = new ArrayList<>();
 
@@ -116,7 +124,16 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
             scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(2);
             scheduledThreadPoolExecutor.scheduleAtFixedRate(this, RECV_DATA_TIMEOUT_MS, RECV_DATA_TIMEOUT_MS, TimeUnit.SECONDS);
         }
+
+        nathTestId10.setText("success");
     }
+
+
+    public void setRealTimeDataInfo(String info) {
+
+        nathTestId11.setText(info);
+    }
+
 
     private void showDialog(String meassge, boolean isShow) {
         if (isShow && !dialog.isShowing()) {
@@ -294,7 +311,10 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
                 macTimeStampMap.put(mac, System.currentTimeMillis());
             }
             boxingFragment.setRealTimeDataInfo(getDisplayStr(true, realTimeFistInfo));
+
             boxingFragment.setNathTest("Punches thrown: " + realTimeFistInfo.getFistNum());
+
+            setRealTimeDataInfo(getDisplayStr(true, realTimeFistInfo));
         }
     };
 
