@@ -50,8 +50,14 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
     @BindView(R.id.nathTestId10)
     TextView nathTestId10;
 
-    @BindView(R.id.nathTestId11)
-    TextView nathTestId11;
+    @BindView(R.id.punchSpeedId)
+    TextView punchSpeedId;
+
+    @BindView(R.id.punchPowerId)
+    TextView punchPowerId;
+
+    @BindView(R.id.punchCountId)
+    TextView punchCountId;
 
     private FraPagerAdapter fraPagerAdapter;
     private List<BoxingFragment> fragmentList = new ArrayList<>();
@@ -128,11 +134,19 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
         nathTestId10.setText("success");
     }
 
-
-    public void setRealTimeDataInfo(String info) {
-
-        nathTestId11.setText(info);
+    public void punchSpeed(String info) {
+        punchSpeedId.setText(info);
     }
+
+    public void punchPower(String info) {
+        punchPowerId.setText(info);
+    }
+
+    public void punchCount(String info) {
+        punchCountId.setText(info);
+    }
+
+
 
 
     private void showDialog(String meassge, boolean isShow) {
@@ -314,7 +328,10 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
 
             boxingFragment.setNathTest("Punches thrown: " + realTimeFistInfo.getFistNum());
 
-            setRealTimeDataInfo(getDisplayStr(true, realTimeFistInfo));
+            punchSpeed("" + realTimeFistInfo.getFistSpeed());
+            punchPower("" + realTimeFistInfo.getFistPower());
+            punchCount("" + realTimeFistInfo.getFistNum());
+
         }
     };
 
