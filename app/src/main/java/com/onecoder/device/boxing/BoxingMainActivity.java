@@ -44,8 +44,7 @@ import butterknife.ButterKnife;
 public class BoxingMainActivity extends BaseActivity implements View.OnClickListener,
         BoxingFragment.OnClickListener, Runnable, MyHandler.OnHandleMessageListener {
     private static final String TAG = BoxingMainActivity.class.getSimpleName();
-    @BindView(R.id.view_pager)
-    ViewPager viewPager;
+
 
     @BindView(R.id.nathTestId10)
     TextView nathTestId10;
@@ -123,7 +122,7 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
         dialog = new ProgressDialog(this);
         Log.i(TAG, "onCreate fragmentList:" + fragmentList);
         fraPagerAdapter = new FraPagerAdapter(getSupportFragmentManager(), fragmentList);
-        viewPager.setAdapter(fraPagerAdapter);
+
 
         if (DEBUG_REAL_TIME_DATA_FUNCTION) {
             handler = new MyHandler(this);

@@ -39,8 +39,7 @@ public class KettleBellMainActivity extends BaseActivity implements View.OnClick
         BoxingFragment.OnClickListener, MyHandler.OnHandleMessageListener {
     private static final String TAG = KettleBellMainActivity.class.getSimpleName();
     private static final String KEY_MAC = "mac";
-    @BindView(R.id.view_pager)
-    ViewPager viewPager;
+
     private BaseDevice baseDevice;
 
     private ProgressDialog dialog;
@@ -100,7 +99,7 @@ public class KettleBellMainActivity extends BaseActivity implements View.OnClick
         dialog = new ProgressDialog(this);
         Log.i(TAG, "onCreate fragmentList:" + fragmentList);
         fraPagerAdapter = new FraPagerAdapter(getSupportFragmentManager(), fragmentList);
-        viewPager.setAdapter(fraPagerAdapter);
+
     }
 
     @Override
