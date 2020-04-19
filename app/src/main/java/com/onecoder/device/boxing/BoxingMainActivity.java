@@ -284,54 +284,71 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
     };
 
     /**
-     * 实时数据回调接口
+     * Real time data callback
      */
     private RealTimeDataListener realTimeDataListener = new RealTimeDataListener() {
+
         /**
-         * 获取到电池电量
-         *
-         * @param mac          设备MAC
-         * @param batteryLevel 电池电量。取值范围:0-100
+         * Got the battery level.
+         * @param mac MAC of device
+         * @param batteryLevel battery level.. Range: 0-100
          */
         @Override
         public void onGotBatteryLevel(String mac, int batteryLevel) {
-            Log.i(TAG, "onGotBatteryLevel mac:" + mac + " batteryLevel:" + batteryLevel);
-            BoxingFragment boxingFragment = getBoxingFragment(mac);
-            if (boxingFragment == null) {
-                return;
-            }
-            boxingFragment.setBatteryLevel(batteryLevel);
+            nathTestId10.setText("" + batteryLevel);
         }
 
         /**
-         * 接收到实时拳击数据
+         * received real time boxing data
          *
-         * @param mac              设备MAC
-         * @param realTimeFistInfo 实时拳击数据
+         * @param mac              MAC of device
+         * @param realTimeFistInfo   real time boxing data
          */
+
         @Override
         public void onRealTimeFistData(String mac, RealTimeFistInfo realTimeFistInfo) {
-            Log.i(TAG, "onRealTimeFistData mac:" + mac + " realTimeFistInfo:" + realTimeFistInfo);
-            BoxingFragment boxingFragment = getBoxingFragment(mac);
-            if (boxingFragment == null || realTimeFistInfo == null) {
+            /** punchSpeedId.setText("Hardware version:" + boxingManager.getProtocolVersion ()); **/
+            if (realTimeFistInfo == null) {
+                Log.i(TAG, "onRealTimeFistData realTimeFistInfo is null");
                 return;
             }
-            Manager manager = BoxingManagerContainer.getInstance().getManager(mac);
-            if (manager instanceof BoxingManager) {
-                boxingFragment.setHardwareVersion(((BoxingManager) manager).getProtocolVersion());
+            StringBuffer stringBuffer = new StringBuffer();
+            FistType fistType = realTimeFistInfo.getFistType();
+            if (fistType == null) {
+                Log.i(TAG, "onRealTimeFistData fistType is null");
+                return;
             }
-            if (DEBUG_REAL_TIME_DATA_FUNCTION) {
-                macTimeStampMap.put(mac, System.currentTimeMillis());
+            String fistTypeStr = fistType.name();
+            switch (fistType) {
+                case Hook:
+                    fistTypeStr = " Hook ";
+                    break;
+
+                case Punch:
+                    fistTypeStr = " Punch ";
+                    break;
+
+                case StraightPunch:
+                    fistTypeStr = " Straight punch ";
+                    break;
+
+                default:
+                    break;
             }
-            boxingFragment.setRealTimeDataInfo(getDisplayStr(true, realTimeFistInfo));
+            stringBuffer.append("Number of punches:" + realTimeFistInfo.getFistNum());
+            stringBuffer.append("\n Boxing type:" + fistTypeStr);
+            stringBuffer.append("\n Fist time:" + realTimeFistInfo.getFistOutTime() + " ms");
+            stringBuffer.append("\n Closing time:" + realTimeFistInfo.getFistInTime() + " ms");
+            stringBuffer.append("\n Boxing intensity:" + realTimeFistInfo.getFistPower() + " G");
+            stringBuffer.append("\n The speed of boxing:" + realTimeFistInfo.getFistSpeed() + " km/h");
+            stringBuffer.append("\n Distance of Boxing:" + realTimeFistInfo.getFistDistance() + " m");
 
-            boxingFragment.setNathTest("Punches thrown: " + realTimeFistInfo.getFistNum());
-
-            punchSpeed("" + realTimeFistInfo.getFistSpeed());
-            punchPower("" + realTimeFistInfo.getFistPower());
-            punchCount("" + realTimeFistInfo.getFistNum());
+            punchSpeedId.setText("" + realTimeFistInfo.getFistSpeed());
+            punchPowerId.setText("" + realTimeFistInfo.getFistPower());
+            punchCountId.setText("" + realTimeFistInfo.getFistNum());
 
         }
+
     };
 
     /**
