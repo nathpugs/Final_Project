@@ -13,11 +13,12 @@
         android:id="@+id/nathTestId10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="time"
+        android:layout_marginTop="30dp"
+        android:text="Round Timer"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_input" />
 
     <TextView
         android:id="@+id/punchSpeedId"
@@ -82,7 +83,7 @@
         android:id="@+id/text_view_countdown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:text="00:00:00"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
@@ -121,5 +122,25 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/edit_text_input"
+        android:layout_width="112dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="36dp"
+        android:hint="minutes"
+        android:maxLength="4"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="149dp" />
+
+    <Button
+        android:id="@+id/button_set"
+        android:layout_width="88dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="12dp"
+        android:text="Button"
+        app:layout_constraintStart_toEndOf="@+id/edit_text_input"
+        tools:layout_editor_absoluteY="27dp" />
 
 </android.support.constraint.ConstraintLayout>
