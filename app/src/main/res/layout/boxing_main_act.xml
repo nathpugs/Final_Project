@@ -123,24 +123,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:visibility="visible" />
 
-    <TextView
+    <EditText
         android:id="@+id/edit_text_input"
-        android:layout_width="112dp"
-        android:layout_height="18dp"
-        android:layout_marginTop="36dp"
-        android:hint="minutes"
+        android:layout_width="113dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="24dp"
+        android:hint="Minutes"
+        android:inputType="number"
         android:maxLength="4"
         android:textAlignment="center"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="149dp" />
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_set"
         android:layout_width="88dp"
         android:layout_height="36dp"
-        android:layout_marginStart="12dp"
-        android:text="Button"
-        app:layout_constraintStart_toEndOf="@+id/edit_text_input"
-        tools:layout_editor_absoluteY="27dp" />
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="84dp"
+        android:text="Set"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
