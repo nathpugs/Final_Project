@@ -106,9 +106,10 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
             return boxingManager;
         }
 //        boxingManager = BoxingManager.getInstance();
-//        //注册状态回调
+//        //
+//        //Registration status callback
 //        boxingManager.registerStateChangeCallback(stateChangeCallback);
-//        // 注册实时数据回调
+//        // Register real-time data callback
 //        boxingManager.registerRealTimeDataListener(realTimeDataListener);
 
         List<BoxingManager> managerList = BoxingManagerContainer.getInstance().getManagerList();
@@ -120,14 +121,15 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
             if (boxingManager == null || boxingManager.getBaseDevice() == null
                     || boxingManager.getBaseDevice().getMacAddress() == null) {
             }
+            // NP - This is where they split the data?
             boxingFragment = new BoxingFragment();
             boxingFragment.setMac(boxingManager.getBaseDevice().getMacAddress());
             boxingFragment.setOnClickListener(this);
             fragmentList.add(boxingFragment);
 
-            //注册状态回调
+            // Registration status callback
             boxingManager.registerStateChangeCallback(stateChangeCallback);
-            // 注册实时数据回调
+            // Register real-time data callback
             boxingManager.registerRealTimeDataListener(realTimeDataListener);
             boxingManager.registerSynchHistoryDataCallBack(synchHistoryDataCallBack);
             this.boxingManager = boxingManager;
@@ -232,12 +234,15 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
 
         mTimerRunning = true;
         updateWatchInterface();
+
+        boxingManager.registerRealTimeDataListener(realTimeDataListener);
     }
 
     private void pauseTimer() {
         mCountDownTimer.cancel();
         mTimerRunning = false;
         updateWatchInterface();
+        boxingManager.unregisterRealTimeDataListener(realTimeDataListener);
     }
 
     private void resetTimer() {
@@ -494,6 +499,8 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
     /**
      * Real time data callback
      */
+
+
     private RealTimeDataListener realTimeDataListener = new RealTimeDataListener() {
 
         /**

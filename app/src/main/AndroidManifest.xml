@@ -56,6 +56,8 @@
         <activity android:name=".hubconfig.SelectHubDevTypeActivity" /> <!-- 拳击相关activity -->
         <activity android:name=".boxing.BoxingScanActivity" />
         <activity android:name=".boxing.BoxingMainActivity" />
+        <activity android:name=".boxing.BoxingSelectExperience" />
+        <activity android:name=".boxing.BoxingHowToWear" />
         <activity android:name=".otherdevices.OtherDeviceScanActivity" />
         <activity android:name=".otherdevices.OtherDevcieDataActivity" />
         <activity android:name=".hubconfig.WifiListActivity" />

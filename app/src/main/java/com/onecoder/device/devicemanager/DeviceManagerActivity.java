@@ -18,8 +18,10 @@ import com.onecoder.device.R;
 import com.onecoder.device.adpater.DevManagerAdapter;
 import com.onecoder.device.base.BaseActivity;
 import com.onecoder.device.base.BleDev;
+import com.onecoder.device.boxing.BoxingHowToWear;
 import com.onecoder.device.boxing.BoxingMainActivity;
 import com.onecoder.device.boxing.BoxingManagerContainer;
+import com.onecoder.device.boxing.BoxingSelectExperience;
 import com.onecoder.device.kettlebell.KettleBellMainActivity;
 import com.onecoder.device.kettlebell.KettleBellManagerContainer;
 import com.onecoder.device.utils.Utils;
@@ -253,7 +255,7 @@ public class DeviceManagerActivity extends BaseActivity implements View.OnClickL
 
             // 拳击
             case Boxing:
-                cls = BoxingMainActivity.class;
+                cls = BoxingHowToWear.class;
                 break;
 
             default:

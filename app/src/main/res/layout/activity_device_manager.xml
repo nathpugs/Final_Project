@@ -24,7 +24,7 @@
             android:id="@+id/control_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" Click to enter the device control interface" />
+            android:text="CONTINUE" />
 
     </LinearLayout>
 
