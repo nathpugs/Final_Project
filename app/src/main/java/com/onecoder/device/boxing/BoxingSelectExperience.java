@@ -3,6 +3,7 @@ package com.onecoder.device.boxing;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.support.v7.widget.AppCompatImageButton;
 import android.view.View;
 import android.widget.Button;
 
@@ -12,7 +13,7 @@ import com.onecoder.device.base.BaseActivity;
 
 
 public class BoxingSelectExperience extends BaseActivity {
-    private Button button;
+    private AppCompatImageButton button;
 
 
     @Override
@@ -20,7 +21,7 @@ public class BoxingSelectExperience extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.boxing_select_exp);
 
-        button = (Button) findViewById(R.id.selectExpBtn);
+        button = (AppCompatImageButton) findViewById(R.id.beginnerBtn);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,3 +35,4 @@ public class BoxingSelectExperience extends BaseActivity {
         startActivity(intent);
     }
 }
+
