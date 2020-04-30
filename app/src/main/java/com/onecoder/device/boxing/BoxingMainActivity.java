@@ -135,6 +135,7 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
             this.boxingManager = boxingManager;
         }
         return boxingManager;
+
     }
 
     @Override
@@ -235,14 +236,23 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
         mTimerRunning = true;
         updateWatchInterface();
 
+        // Registration status callback
+        boxingManager.registerStateChangeCallback(stateChangeCallback);
+        // Register real-time data callback
         boxingManager.registerRealTimeDataListener(realTimeDataListener);
+        boxingManager.registerSynchHistoryDataCallBack(synchHistoryDataCallBack);
     }
 
     private void pauseTimer() {
         mCountDownTimer.cancel();
         mTimerRunning = false;
         updateWatchInterface();
+
+        // Registration status callback
+        boxingManager.unregistStateChangeCallback(stateChangeCallback);
+        // Register real-time data callback
         boxingManager.unregisterRealTimeDataListener(realTimeDataListener);
+        boxingManager.unregisterSynchHistoryDataCallBack(synchHistoryDataCallBack);
     }
 
     private void resetTimer() {
@@ -466,11 +476,13 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
     }
 
     /**
-     * 臂带的连接状态回调
+     *
+     * Armband connection status callback
      */
     private DeviceStateChangeCallback stateChangeCallback = new DeviceStateChangeCallback() {
         /**
-         * 臂带的连接状态变化回调
+         *
+         * Armband connection status change callback
          * @param mac ：mac地址
          * @param status ：状态值
          */
@@ -485,7 +497,8 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
         }
 
         /**
-         * 臂带可以下发数据的回调
+         *
+         * Armband can send callback data
          * @param mac
          * @param isNeedSetParam
          */
@@ -757,6 +770,7 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
                     if (boxingManager == null) {
                         continue;
                     }
+                    boxingManager.closeDevice();
                     boxingManager.unregistStateChangeCallback(stateChangeCallback);
                     boxingManager.unregisterRealTimeDataListener(realTimeDataListener);
                     //注册历史数据回调

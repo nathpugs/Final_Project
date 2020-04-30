@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">FitBleKit</string>
+    <string name="app_name">BOX.</string>
 
     <!--权限-->
-    <string name="permission_request_title">FitBleKit needs to get some permissions on your device</string>
+    <string name="permission_request_title">BOX. needs to get some permissions on your device</string>
     <string name="permission_request_goto_settings">Go to set</string>
     <string name="permission_request_failed">Failed to get permission</string>
     <string name="permission_rationale_storage">Get device storage permissions to access cached data</string>
@@ -100,6 +100,4 @@
     <string name="entry_heart_rate_mode">Entry heart rate mode</string>
     <string name="entry_photo_mode">Entry photo mode</string>
     <string name="pair">Pair</string>
-
-
 </resources>
