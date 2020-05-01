@@ -92,7 +92,7 @@ public class ScanConnectDevActivity extends BaseActivity implements BleScanCallB
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.device_scan_act);
-        setTitle("扫描及连接");
+        setTitle("Scan and connect");
         channelOpened = false;
 
         deviceLists = (ListView) findViewById(R.id.showBlueTooth);
@@ -121,7 +121,7 @@ public class ScanConnectDevActivity extends BaseActivity implements BleScanCallB
         switch (v.getId()) {
             case R.id.scan_device:
                 bluetoothBeenList.clear();
-                showDialog("搜索设备", true);
+                showDialog("Searching...", true);
                 scanEnableDevice(true);
                 break;
         }
@@ -189,15 +189,15 @@ public class ScanConnectDevActivity extends BaseActivity implements BleScanCallB
     @Override
     public void onItemClick(BluetoothBean device) {
         if (connecting) {
-            Toast.makeText(this, "连接中，请等待！", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Please wait while connected!", Toast.LENGTH_LONG).show();
             return;
         }
         if (channelOpened) {
-            Toast.makeText(this, "设备已连接！", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Sensor connected！", Toast.LENGTH_LONG).show();
             return;
         }
 
-        showDialog("设备连接", true);
+        showDialog("Connecting...", true);
         BluetoothDevice bleDevice = device.getBleDevice();
         baseDevice = new BaseDevice();
         //设置设备类型
@@ -217,7 +217,7 @@ public class ScanConnectDevActivity extends BaseActivity implements BleScanCallB
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (baseDevice == null) {
-            Toast.makeText(this, "请选择设备！", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Please select a device！", Toast.LENGTH_LONG).show();
             return super.onOptionsItemSelected(item);
         }
 

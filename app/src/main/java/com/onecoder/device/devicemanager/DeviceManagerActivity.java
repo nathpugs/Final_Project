@@ -200,7 +200,7 @@ public class DeviceManagerActivity extends BaseActivity implements View.OnClickL
             case R.id.control_btn:
                 List<Manager> managerList = managerContainer.getManagerList();
                 if (managerList == null || managerList.size() == 0) {
-                    Toast.makeText(this, "请先添加设备！", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Please connect sensors before continuing...", Toast.LENGTH_LONG).show();
                     break;
                 }
                 startControlPage();
@@ -306,7 +306,7 @@ public class DeviceManagerActivity extends BaseActivity implements View.OnClickL
         Manager manager = managerContainer.getManager(baseDevice.getMacAddress());
         if (manager != null) {
             if (manager.getConnectState() >= BleDevice.STATE_CONNECTING) {
-                Toast.makeText(this, "连接中或已连接", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Connected", Toast.LENGTH_LONG).show();
                 return;
             }
             manager.connectDevice(baseDevice);
