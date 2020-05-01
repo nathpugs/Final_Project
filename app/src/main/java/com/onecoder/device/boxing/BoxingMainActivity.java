@@ -299,7 +299,7 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
             mEditTextInput.setVisibility(View.INVISIBLE);
             mButtonSet.setVisibility(View.INVISIBLE);
             mButtonReset.setVisibility(View.INVISIBLE);
-            mButtonStartPause.setText("Pause");
+            mButtonStartPause.setText("PAUSE");
 
             punchCountId.setVisibility(View.VISIBLE);
             punchCountUnitId.setVisibility(View.VISIBLE);
@@ -313,7 +313,7 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
         } else {
             mEditTextInput.setVisibility(View.VISIBLE);
             mButtonSet.setVisibility(View.VISIBLE);
-            mButtonStartPause.setText("Start");
+            mButtonStartPause.setText("START");
 
             punchCountId.setVisibility(View.INVISIBLE);
             punchCountUnitId.setVisibility(View.INVISIBLE);
@@ -345,7 +345,7 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
             mEditTextInput.setVisibility(View.INVISIBLE);
             mButtonSet.setVisibility(View.INVISIBLE);
             mButtonReset.setVisibility(View.INVISIBLE);
-            mButtonStartPause.setText("Pause");
+            mButtonStartPause.setText("PAUSE");
 
             punchCountId.setVisibility(View.VISIBLE);
             punchCountUnitId.setVisibility(View.VISIBLE);
@@ -359,7 +359,7 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
         } else {
             mEditTextInput.setVisibility(View.INVISIBLE);
             mButtonSet.setVisibility(View.INVISIBLE);
-            mButtonStartPause.setText("Start");
+            mButtonStartPause.setText("START");
 
             punchCountId.setVisibility(View.VISIBLE);
             punchCountUnitId.setVisibility(View.VISIBLE);
