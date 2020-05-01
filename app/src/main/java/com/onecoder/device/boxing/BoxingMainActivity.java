@@ -63,6 +63,17 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
     @BindView(R.id.punchCountId)
     TextView punchCountId;
 
+    @BindView(R.id.punchSpeedUnitId)
+    TextView punchSpeedUnitId;
+
+    @BindView(R.id.punchPowerUnitId)
+    TextView punchPowerUnitId;
+
+    @BindView(R.id.punchCountUnitId)
+    TextView punchCountUnitId;
+
+
+
     private FraPagerAdapter fraPagerAdapter;
     private List<BoxingFragment> fragmentList = new ArrayList<>();
 
@@ -98,6 +109,9 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
     private long mTimeLeftInMillis;
     private long mEndTime;
 
+
+    public BoxingMainActivity() {
+    }
 
 
     @Override
@@ -246,7 +260,7 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
     private void pauseTimer() {
         mCountDownTimer.cancel();
         mTimerRunning = false;
-        updateWatchInterface();
+        updateWatchInterface2();
 
         // Registration status callback
         boxingManager.unregistStateChangeCallback(stateChangeCallback);
@@ -286,10 +300,76 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
             mButtonSet.setVisibility(View.INVISIBLE);
             mButtonReset.setVisibility(View.INVISIBLE);
             mButtonStartPause.setText("Pause");
+
+            punchCountId.setVisibility(View.VISIBLE);
+            punchCountUnitId.setVisibility(View.VISIBLE);
+            punchPowerId.setVisibility(View.VISIBLE);
+            punchPowerUnitId.setVisibility(View.VISIBLE);
+            punchSpeedId.setVisibility(View.VISIBLE);
+            punchSpeedUnitId.setVisibility(View.VISIBLE);
+            mTextViewCountDown.setVisibility(View.VISIBLE);
+            nathTestId10.setVisibility(View.VISIBLE);
+
         } else {
             mEditTextInput.setVisibility(View.VISIBLE);
             mButtonSet.setVisibility(View.VISIBLE);
             mButtonStartPause.setText("Start");
+
+            punchCountId.setVisibility(View.INVISIBLE);
+            punchCountUnitId.setVisibility(View.INVISIBLE);
+            punchPowerId.setVisibility(View.INVISIBLE);
+            punchPowerUnitId.setVisibility(View.INVISIBLE);
+            punchSpeedId.setVisibility(View.INVISIBLE);
+            punchSpeedUnitId.setVisibility(View.INVISIBLE);
+            mTextViewCountDown.setVisibility(View.INVISIBLE);
+            nathTestId10.setVisibility(View.INVISIBLE);
+
+
+            if (mTimeLeftInMillis < 1000) {
+                mButtonStartPause.setVisibility(View.INVISIBLE);
+            } else {
+                mButtonStartPause.setVisibility(View.VISIBLE);
+            }
+
+            if (mTimeLeftInMillis < mStartTimeInMillis) {
+                mButtonReset.setVisibility(View.VISIBLE);
+            } else {
+                mButtonReset.setVisibility(View.INVISIBLE);
+            }
+        }
+    }
+
+
+    private void updateWatchInterface2() {
+        if (mTimerRunning) {
+            mEditTextInput.setVisibility(View.INVISIBLE);
+            mButtonSet.setVisibility(View.INVISIBLE);
+            mButtonReset.setVisibility(View.INVISIBLE);
+            mButtonStartPause.setText("Pause");
+
+            punchCountId.setVisibility(View.VISIBLE);
+            punchCountUnitId.setVisibility(View.VISIBLE);
+            punchPowerId.setVisibility(View.VISIBLE);
+            punchPowerUnitId.setVisibility(View.VISIBLE);
+            punchSpeedId.setVisibility(View.VISIBLE);
+            punchSpeedUnitId.setVisibility(View.VISIBLE);
+            mTextViewCountDown.setVisibility(View.VISIBLE);
+            nathTestId10.setVisibility(View.VISIBLE);
+
+        } else {
+            mEditTextInput.setVisibility(View.INVISIBLE);
+            mButtonSet.setVisibility(View.INVISIBLE);
+            mButtonStartPause.setText("Start");
+
+            punchCountId.setVisibility(View.VISIBLE);
+            punchCountUnitId.setVisibility(View.VISIBLE);
+            punchPowerId.setVisibility(View.VISIBLE);
+            punchPowerUnitId.setVisibility(View.VISIBLE);
+            punchSpeedId.setVisibility(View.VISIBLE);
+            punchSpeedUnitId.setVisibility(View.VISIBLE);
+            mTextViewCountDown.setVisibility(View.VISIBLE);
+            nathTestId10.setVisibility(View.VISIBLE);
+
 
             if (mTimeLeftInMillis < 1000) {
                 mButtonStartPause.setVisibility(View.INVISIBLE);

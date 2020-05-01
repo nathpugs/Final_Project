@@ -6,8 +6,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="1"
-    android:background="@color/white"
-    android:fitsSystemWindows="true">
+    android:background="@color/black"
+    android:fitsSystemWindows="true"
+    tools:background="@color/black">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/opinion_pro_bold"
+        android:text="TRAIN"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/nathTestId10"
@@ -15,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="Round Timer"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,6 +48,7 @@
         android:text="speed"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_view_countdown" />
 
@@ -40,6 +60,7 @@
         android:layout_marginTop="10dp"
         android:text="km/h"
         android:textAlignment="center"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/punchSpeedId" />
 
@@ -52,6 +73,7 @@
         android:text="power"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_view_countdown" />
 
@@ -63,6 +85,7 @@
         android:layout_marginEnd="128dp"
         android:text="g"
         android:textAlignment="center"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/punchPowerId" />
 
@@ -74,6 +97,7 @@
         android:text="count"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,6 +111,7 @@
         android:text="00:00:00"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nathTestId10" />
@@ -97,6 +122,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Punches"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/punchCountId" />
@@ -128,23 +154,23 @@
         android:layout_width="113dp"
         android:layout_height="46dp"
         android:layout_marginStart="116dp"
-        android:layout_marginTop="24dp"
-        android:hint="Minutes"
+        android:hint="Enter minutes..."
         android:inputType="number"
         android:maxLength="4"
         android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/light_gray"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <Button
         android:id="@+id/button_set"
         android:layout_width="88dp"
         android:layout_height="36dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="84dp"
         android:text="Set"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 </android.support.constraint.ConstraintLayout>
