@@ -40,17 +40,30 @@
     <ImageButton
         android:id="@+id/beginnerBtn"
         android:layout_width="0dp"
-        android:layout_height="230dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
+        android:scaleType="center"
         app:layout_constraintBottom_toTopOf="@+id/coachBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        tools:src="@tools:sample/backgrounds/scenic" />
+        tools:src="@drawable/beginner" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/opinion_pro_bold"
+        android:text="BEGINNER"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/beginnerBtn"
+        app:layout_constraintEnd_toEndOf="@+id/beginnerBtn"
+        app:layout_constraintStart_toStartOf="@+id/beginnerBtn"
+        app:layout_constraintTop_toTopOf="@+id/beginnerBtn" />
 
     <ImageButton
         android:id="@+id/coachBtn"
@@ -59,13 +72,26 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
+        android:scaleType="center"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/beginnerBtn"
-        tools:src="@tools:sample/backgrounds/scenic" />
+        tools:src="@drawable/coach" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/opinion_pro_bold"
+        android:text="COACH"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/coachBtn"
+        app:layout_constraintEnd_toEndOf="@+id/coachBtn"
+        app:layout_constraintStart_toStartOf="@+id/coachBtn"
+        app:layout_constraintTop_toTopOf="@+id/coachBtn" />
 
     <TextView
         android:id="@+id/textView"
