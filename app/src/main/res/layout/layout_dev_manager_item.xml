@@ -6,7 +6,7 @@
     <!-- android:descendantFocusability="blocksDescendants"-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:gravity="center_vertical"
         android:orientation="vertical"
@@ -22,27 +22,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/opinion_pro_medium"
                 android:text="HW330"
-                android:textSize="12sp" />
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/connect_state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
+                android:fontFamily="@font/opinion_pro_regular"
+                android:paddingLeft="20dp"
                 android:text=""
-                android:textSize="10sp" />
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/text_mac"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:duplicateParentState="true"
-            android:text="12:3a:5e:7c:89:7f"
-            android:textSize="12sp" />
 
     </LinearLayout>
 

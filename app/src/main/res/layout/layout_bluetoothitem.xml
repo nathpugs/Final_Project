@@ -11,7 +11,7 @@
         android:layout_gravity="center_vertical"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="0dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -24,6 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <FrameLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent">
@@ -33,25 +34,30 @@
                         android:id="@+id/xinhao"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/xinhaotiao00"/>
+                        android:paddingTop="2dp"
+                        android:src="@mipmap/xinhaotiao00" />
                 </FrameLayout>
 
                 <FrameLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    >
+                    android:layout_weight="1">
 
                     <TextView
                         android:id="@+id/text_rssi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|bottom"
-                        android:text="HW382H"
+                        android:layout_marginLeft="5dp"
                         android:duplicateParentState="true"
-                        android:layout_marginLeft="5dp"/>
+                        android:fontFamily="@font/opinion_pro_medium"
+                        android:paddingBottom="2dp"
+                        android:text="HW382H"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
 
                 </FrameLayout>
+
                 <FrameLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -62,19 +68,19 @@
                         android:id="@+id/iscount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
                         android:layout_gravity="right|center"
                         android:text="@string/connected"
-                        android:visibility="gone"/>
+                        android:textColor="@color/white"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/uncount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
                         android:layout_gravity="right|center"
                         android:text="@string/unconnected"
-                        android:visibility="gone"/>
+                        android:textColor="@color/white"
+                        android:visibility="gone" />
 
 
                 </FrameLayout>
@@ -85,13 +91,13 @@
                 android:id="@+id/text_mac"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="21123123123"
-                android:duplicateParentState="true"
-                android:textSize="12dp"
-
-
                 android:layout_marginTop="7dp"
-                />
+                android:duplicateParentState="true"
+                android:text="21123123123"
+
+
+                android:textColor="@color/black"
+                android:textSize="12dp" />
 
         </LinearLayout>
 

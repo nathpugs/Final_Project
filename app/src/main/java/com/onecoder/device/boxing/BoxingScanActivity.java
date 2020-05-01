@@ -122,6 +122,8 @@ public class BoxingScanActivity extends BaseActivity implements BleScanCallBack,
         }
     }
 
+
+
     private void showDialog(String meassge, boolean isShow) {
         if (isShow && !dialog.isShowing()) {
             dialog.setMessage(meassge);

@@ -78,7 +78,7 @@ public class DevManagerAdapter extends BaseAdapter {
         viewHolder.connectState.setText(
                 context.getString(bleDev.getConnectState() >= BleDevice.STATE_CONNECTED
                         ? R.string.connected : R.string.unconnected));
-        viewHolder.textMac.setText("" + bleDev.getMacAddress());
+
     }
 
     static class ViewHolder {
@@ -86,8 +86,7 @@ public class DevManagerAdapter extends BaseAdapter {
         TextView devNameTxt;
         @BindView(R.id.connect_state)
         TextView connectState;
-        @BindView(R.id.text_mac)
-        TextView textMac;
+
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);
