@@ -23,6 +23,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <!-- 蒲公英bug管理SDK集成可选 -->
         <!-- <activity android:name="com.pgyersdk.activity.FeedbackActivity"/> -->
         <!-- 蒲公英bug管理SDK集成必选 -->
@@ -30,7 +31,9 @@
             android:name="PGYER_APPID"
             android:value="c3453fbb74bed14f5c10f0ebcef41be2" /> <!-- 注册SDK蓝牙服务 -->
 
-        <activity android:name=".home.MainActivity"  android:theme="@style/AppTheme2">
+        <activity android:name=".home.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,8 +41,8 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".devicemanager.ScanConnectDevActivity" />
-        <activity android:name=".devicemanager.DeviceManagerActivity" />
+        <activity android:name=".devicemanager.ScanConnectDevActivity" android:screenOrientation="portrait" />
+        <activity android:name=".devicemanager.DeviceManagerActivity" android:screenOrientation="portrait" />
         <activity android:name=".scale.ScaleMainActivity" />
         <activity android:name=".scale.ScaleDataActivity" /> <!-- 手环的扫描Activity -->
         <activity android:name=".tracker.TrackerScanActivity" />
@@ -55,10 +58,10 @@
         <activity android:name=".hubconfig.HubConfigScanActivity" />
         <activity android:name=".hubconfig.HubConfigMainActivity" />
         <activity android:name=".hubconfig.SelectHubDevTypeActivity" /> <!-- 拳击相关activity -->
-        <activity android:name=".boxing.BoxingScanActivity" />
-        <activity android:name=".boxing.BoxingMainActivity" />
-        <activity android:name=".boxing.BoxingSelectExperience" />
-        <activity android:name=".boxing.BoxingHowToWear" />
+        <activity android:name=".boxing.BoxingScanActivity" android:screenOrientation="portrait" />
+        <activity android:name=".boxing.BoxingMainActivity" android:screenOrientation="portrait" />
+        <activity android:name=".boxing.BoxingSelectExperience" android:screenOrientation="portrait" />
+        <activity android:name=".boxing.BoxingHowToWear" android:screenOrientation="portrait" />
         <activity android:name=".otherdevices.OtherDeviceScanActivity" />
         <activity android:name=".otherdevices.OtherDevcieDataActivity" />
         <activity android:name=".hubconfig.WifiListActivity" />
