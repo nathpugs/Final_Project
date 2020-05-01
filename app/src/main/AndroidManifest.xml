@@ -61,6 +61,7 @@
         <activity android:name=".boxing.BoxingScanActivity" android:screenOrientation="portrait" />
         <activity android:name=".boxing.BoxingMainActivity" android:screenOrientation="portrait" />
         <activity android:name=".boxing.BoxingSelectExperience" android:screenOrientation="portrait" />
+        <activity android:name=".boxing.BoxingFeedback" android:screenOrientation="portrait" />
         <activity android:name=".boxing.BoxingHowToWear" android:screenOrientation="portrait" />
         <activity android:name=".otherdevices.OtherDeviceScanActivity" />
         <activity android:name=".otherdevices.OtherDevcieDataActivity" />

@@ -1,6 +1,7 @@
 package com.onecoder.device.boxing;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
@@ -73,6 +74,7 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
     TextView punchCountUnitId;
 
 
+    private Button button;
 
     private FraPagerAdapter fraPagerAdapter;
     private List<BoxingFragment> fragmentList = new ArrayList<>();
@@ -170,7 +172,7 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
             scheduledThreadPoolExecutor.scheduleAtFixedRate(this, RECV_DATA_TIMEOUT_MS, RECV_DATA_TIMEOUT_MS, TimeUnit.SECONDS);
         }
 
-        nathTestId10.setText("success");
+
 
         // Timer Code [ START ]
 
@@ -199,6 +201,12 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
                     setTime(millisInput);
                     mEditTextInput.setText("");
 
+                    if (mTimerRunning) {
+                        pauseTimer();
+                    } else {
+                        startTimer();
+                    }
+
                 }
         });
 
@@ -217,12 +225,18 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
             @Override
             public void onClick(View v) {
                 resetTimer();
+                openFeedback();
             }
         });
 
         // Timer Code - [ END ]
     }
 
+
+    public void openFeedback() {
+        Intent intent = new Intent(this, BoxingFeedback.class);
+        startActivity(intent);
+    }
     // Timer Code - Methods [ START ]
 
     private void setTime(long milliseconds) {
@@ -272,7 +286,7 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
     private void resetTimer() {
         mTimeLeftInMillis = mStartTimeInMillis;
         updateCountDownText();
-        updateWatchInterface();
+        updateWatchInterface4();
     }
 
     private void updateCountDownText() {
@@ -298,7 +312,7 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
         if (mTimerRunning) {
             mEditTextInput.setVisibility(View.INVISIBLE);
             mButtonSet.setVisibility(View.INVISIBLE);
-            mButtonReset.setVisibility(View.INVISIBLE);
+            mButtonReset.setVisibility(View.VISIBLE);
             mButtonStartPause.setText("PAUSE");
 
             punchCountId.setVisibility(View.VISIBLE);
@@ -359,7 +373,7 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
         } else {
             mEditTextInput.setVisibility(View.INVISIBLE);
             mButtonSet.setVisibility(View.INVISIBLE);
-            mButtonStartPause.setText("START");
+            mButtonStartPause.setText("RESUME");
 
             punchCountId.setVisibility(View.VISIBLE);
             punchCountUnitId.setVisibility(View.VISIBLE);
@@ -384,6 +398,58 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
             }
         }
     }
+
+
+    private void updateWatchInterface3() {
+
+            mEditTextInput.setVisibility(View.VISIBLE);
+            mButtonSet.setVisibility(View.VISIBLE);
+
+            mButtonStartPause.setVisibility(View.INVISIBLE);
+            mButtonReset.setVisibility(View.INVISIBLE);
+            punchCountId.setVisibility(View.INVISIBLE);
+            punchCountUnitId.setVisibility(View.INVISIBLE);
+            punchPowerId.setVisibility(View.INVISIBLE);
+            punchPowerUnitId.setVisibility(View.INVISIBLE);
+            punchSpeedId.setVisibility(View.INVISIBLE);
+            punchSpeedUnitId.setVisibility(View.INVISIBLE);
+            mTextViewCountDown.setVisibility(View.INVISIBLE);
+            nathTestId10.setVisibility(View.INVISIBLE);
+
+    }
+
+
+    private void updateWatchInterface4() {
+
+            mEditTextInput.setVisibility(View.VISIBLE);
+            mButtonSet.setVisibility(View.VISIBLE);
+            mButtonStartPause.setText("START");
+        mButtonStartPause.setVisibility(View.INVISIBLE);
+
+            punchCountId.setVisibility(View.INVISIBLE);
+            punchCountUnitId.setVisibility(View.INVISIBLE);
+            punchPowerId.setVisibility(View.INVISIBLE);
+            punchPowerUnitId.setVisibility(View.INVISIBLE);
+            punchSpeedId.setVisibility(View.INVISIBLE);
+            punchSpeedUnitId.setVisibility(View.INVISIBLE);
+            mTextViewCountDown.setVisibility(View.INVISIBLE);
+            nathTestId10.setVisibility(View.INVISIBLE);
+
+
+            if (mTimeLeftInMillis < 1000) {
+                mButtonStartPause.setVisibility(View.INVISIBLE);
+            } else {
+                mButtonStartPause.setVisibility(View.VISIBLE);
+            }
+
+            if (mTimeLeftInMillis < mStartTimeInMillis) {
+                mButtonReset.setVisibility(View.VISIBLE);
+            } else {
+                mButtonReset.setVisibility(View.INVISIBLE);
+            }
+
+    }
+
 
     @Override
     protected void onStop() {
@@ -415,7 +481,7 @@ public class BoxingMainActivity extends BaseActivity implements View.OnClickList
         mTimerRunning = prefs.getBoolean("timerRunning", false);
 
         updateCountDownText();
-        updateWatchInterface();
+        updateWatchInterface3();
 
         if (mTimerRunning) {
             mEndTime = prefs.getLong("endTime", 0);

@@ -10,6 +10,24 @@
     android:fitsSystemWindows="true"
     tools:background="@color/black">
 
+    <Button
+        android:id="@+id/button_set"
+        android:layout_width="0dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/roundedbutton"
+        android:fontFamily="@font/opinion_pro_bold"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:paddingTop="0dp"
+        android:text="START ROUND"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_input" />
+
     <android.support.constraint.Guideline
         android:id="@+id/guideline6"
         android:layout_width="wrap_content"
@@ -50,7 +68,7 @@
         android:gravity="center"
         android:onClick="onClick"
         android:paddingTop="0dp"
-        android:text="RESET"
+        android:text="END ROUND"
         android:textSize="21sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
@@ -192,27 +210,22 @@
 
     <EditText
         android:id="@+id/edit_text_input"
-        android:layout_width="113dp"
+        android:layout_width="0dp"
         android:layout_height="46dp"
-        android:layout_marginStart="116dp"
-        android:hint="Enter minutes..."
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/opinion_pro_regular"
+        android:hint="Enter round length (minutes)"
         android:inputType="number"
         android:maxLength="4"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textColorHint="@color/light_gray"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
-    <Button
-        android:id="@+id/button_set"
-        android:layout_width="88dp"
-        android:layout_height="36dp"
-        android:layout_marginEnd="84dp"
-        android:text="Set"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline5"
